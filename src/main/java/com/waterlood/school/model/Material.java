@@ -6,8 +6,11 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
+@Getter
+@Setter
 @Entity
 @Table(name="materiels")
 public class Material {
@@ -26,38 +29,37 @@ public class Material {
 	@Column(name="quantite")
 	private int quantite;
 
-	public int getNum_materiel() {
-		return num_materiel;
-	}
+//	public int getNum_materiel() {
+//		return num_materiel;
+//	}
+//
+//	public void setNum_materiel(int num_materiel) {
+//		this.num_materiel = num_materiel;
+//	}
+//
+//	public String getDesign() {
+//		return design;
+//	}
+//
+//	public void setDesign(String design) {
+//		this.design = design;
+//	}
+//
+//	public String getEtat() {
+//		return etat;
+//	}
+//
+//	public void setEtat(String etat) {
+//		this.etat = etat;
+//	}
+//
+//	public int getQuantite() {
+//		return quantite;
+//	}
+//
+//	public void setQuantite(int quantite) {
+//		this.quantite = quantite;
+//	}
 
-	public void setNum_materiel(int num_materiel) {
-		this.num_materiel = num_materiel;
-	}
-
-	public String getDesign() {
-		return design;
-	}
-
-	public void setDesign(String design) {
-		this.design = design;
-	}
-
-	public String getEtat() {
-		return etat;
-	}
-
-	public void setEtat(String etat) {
-		this.etat = etat;
-	}
-
-	public int getQuantite() {
-		return quantite;
-	}
-
-	public void setQuantite(int quantite) {
-		this.quantite = quantite;
-	}
-
-	
 
 }
