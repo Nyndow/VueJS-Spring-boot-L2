@@ -29,6 +29,9 @@ public class Material {
 	@Column(name="quantite")
 	private int quantite;
 
+//------------------------------------------------
+//UNCOMMENT the getters and setters if you can't see any data but get the right count 
+	
 //	public int getNum_materiel() {
 //		return num_materiel;
 //	}
