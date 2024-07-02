@@ -44,15 +44,15 @@ export default {
   methods: {
     async addMat() {
       try {
-        await axios.post('http://localhost:8000/add_mat', {
+        await axios.post(`${process.env.VUE_APP_API_URL}/add_mat`, {
           design: this.Design,
           etat: this.Etat,
           quantite: this.Quantite
         });
         console.log('Form submitted successfully');
-      } catch (error) {
-        console.error(error);
-      }
+        } catch (error) {
+          console.error(error);
+        }
     }
   }
 };
