@@ -13,7 +13,7 @@ export default {
     },
     methods: {
         modMat: async function (num_materiel) {
-            await axios.put(`${process.env.VUE_APP_API_URL}/`+ mat.num_materiel, {
+            await axios.put(`http://10.10.10.11:2000/`+ mat.num_materiel, {
                 num_materiel: mat.num_materiel,
                 design: this.design,
                 etat: this.etat,

@@ -44,7 +44,7 @@ export default {
   methods: {
     async addMat() {
       try {
-        await axios.post(`${process.env.VUE_APP_API_URL}/add_mat`, {
+        await axios.post(`http://10.10.10.11:2000/add_mat`, {
           design: this.Design,
           etat: this.Etat,
           quantite: this.Quantite

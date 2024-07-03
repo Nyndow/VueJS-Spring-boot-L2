@@ -12,7 +12,7 @@ export default {
     methods: {
         deleteRequest(num_materiel) {
             axios
-                .delete(`${process.env.VUE_APP_API_URL}/${num_materiel}`)
+                .delete(`http://10.10.10.11:2000/${num_materiel}`)
                 .then((response) => {
                     console.log(response);
                     this.fetchMateriels(); // Refresh the Materiels list after successful deletion
@@ -34,7 +34,7 @@ export default {
             };
 
             axios
-                .put(`${process.env.VUE_APP_API_URL}/${this.editForm.num_materiel}`, updatedData)
+                .put(`http://10.10.10.11:2000/${this.editForm.num_materiel}`, updatedData)
                 .then((response) => {
                     console.log(response);
                     this.fetchMateriels();
@@ -47,7 +47,7 @@ export default {
         },
         fetchMateriels() {
             axios
-                .get(`${process.env.VUE_APP_API_URL}/list_mat`)
+                .get(`http://10.10.10.11:2000/list_mat`)
                 .then((response) => {
                     this.Materiels = response.data;
                 })
