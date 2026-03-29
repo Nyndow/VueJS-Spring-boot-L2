@@ -16,53 +16,16 @@ import lombok.Setter;
 public class Material {
 
 	@Id
-	@GeneratedValue(strategy= GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="num_materiel")
-	private int num_materiel;
-	
+	private int numMateriel;
+
 	@Column(name="design")
 	private String design;
-	
+
 	@Column(name="etat")
 	private String etat;
-	
+
 	@Column(name="quantite")
 	private int quantite;
-
-//------------------------------------------------
-//UNCOMMENT the getters and setters if you can't see any data but get the right count 
-	
-//	public int getNum_materiel() {
-//		return num_materiel;
-//	}
-//
-//	public void setNum_materiel(int num_materiel) {
-//		this.num_materiel = num_materiel;
-//	}
-//
-//	public String getDesign() {
-//		return design;
-//	}
-//
-//	public void setDesign(String design) {
-//		this.design = design;
-//	}
-//
-//	public String getEtat() {
-//		return etat;
-//	}
-//
-//	public void setEtat(String etat) {
-//		this.etat = etat;
-//	}
-//
-//	public int getQuantite() {
-//		return quantite;
-//	}
-//
-//	public void setQuantite(int quantite) {
-//		this.quantite = quantite;
-//	}
-
-
 }

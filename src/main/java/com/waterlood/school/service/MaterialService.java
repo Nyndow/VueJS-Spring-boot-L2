@@ -1,14 +1,3 @@
-package com.waterlood.school.service;
-
-import java.util.List;
-import java.util.Optional;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-
-import com.waterlood.school.model.Material;
-import com.waterlood.school.repository.MaterialRepository;
-
 @Service
 public class MaterialService {
 	
@@ -16,30 +5,31 @@ public class MaterialService {
 	private MaterialRepository materialRepository;
 
 	public List<Material> getCustomers() {
-		return (List<Material>) materialRepository.findAll();	}
+		return (List<Material>) materialRepository.findAll();
+	}
 	
-	public Optional<Material> getCustomer(int num_materiel)
-	{
+	public Optional<Material> getCustomer(int num_materiel) {
 		return materialRepository.findById(num_materiel);
 	}
 	
-	public Material addCustomer(Material material)
-	{
-		Material savedCustomer = materialRepository.save(material); 
-		return savedCustomer;
+	public Material addCustomer(Material material) {
+		return materialRepository.save(material);
 	}
 	
 	public Material updateCustomer(Material material) {
-	        Material savedCustomer = materialRepository.save(material);
-	        return savedCustomer;
-	    }
+		int materialId = material.getNum_materiel();
 
-	
-	public void deleteCustomer(int getNum_materiel)
-	{
+		return materialRepository.findById(materialId)
+				.map(existing -> {
+					existing.setName(material.getName());
+					existing.setQuantity(material.getQuantity());
+
+					return materialRepository.save(existing);
+				})
+				.orElseThrow(() -> new RuntimeException("Material not found with id: " + materialId));
+	}
+
+	public void deleteCustomer(int getNum_materiel) {
 		materialRepository.deleteById(getNum_materiel);
 	}
-	
-
-	
 }
