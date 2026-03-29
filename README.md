@@ -1,12 +1,14 @@
-# VueJS-Spring-boot-L2
+# VueJS - Spring Boot L2 Project
 
---Don't forget to change your db conn on application.properties--  
+⚠️ Don't forget to update your database connection in `src/main/resources/application.properties`
 
-The src/main directory contains the backend and view...view
-
--------------------------------------------------- 
-npm install 
-npm run dev to launch
-npm install packageName to install missing packages 
+The `src/main/` directory contains the Spring Boot backend and the frontend (Vue view).
 
 --------------------------------------------------
+
+## Frontend Setup
+
+```bash
+npm install
+npm run dev
+```
